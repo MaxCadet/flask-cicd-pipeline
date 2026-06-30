@@ -7,7 +7,7 @@ def home():
     return jsonify({
         "message": "Flask CI/CD Pipeline",
         "status": "healthy",
-        "version": "1.0.0"
+        "version": "1.1.0"
     })
 
 @app.route("/health")
