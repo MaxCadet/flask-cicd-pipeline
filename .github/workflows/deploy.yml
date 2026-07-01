@@ -9,7 +9,7 @@ env:
   ROLE_TO_ASSUME: arn:aws:iam::166665178530:role/github-actions-ecs-deploy-role
   ECR_REPOSITORY: flask-cicd-pipeline
   ECS_CLUSTER: flask-cicd-cluster
-  ECS_SERVICE: flask-cicd-service
+  ECS_SERVICE: flask-cicd-task-service
   ECS_TASK_DEFINITION: flask-cicd-task
   CONTAINER_NAME: flask-app
 
