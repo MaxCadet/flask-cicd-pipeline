@@ -2,7 +2,7 @@
 
 A production-style CI/CD pipeline that automatically builds, pushes, and deploys a containerized Flask application to AWS ECS Fargate via GitHub Actions — triggered on every push to `main`.
 
-**Live endpoint:** `http://flask-cicd-alb-1090080014.us-east-2.elb.amazonaws.com`
+**Status:** The pipeline was deployed to AWS ECS Fargate behind an ALB. The AWS environment is no longer running, so there is no live endpoint.
 
 ---
 
@@ -174,14 +174,14 @@ curl http://localhost:5001/health
 # Authenticate
 aws ecr get-login-password --region us-east-2 | \
   docker login --username AWS --password-stdin \
-  166665178530.dkr.ecr.us-east-2.amazonaws.com
+  <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com
 
 # Tag and push
 docker tag flask-cicd-pipeline:latest \
-  166665178530.dkr.ecr.us-east-2.amazonaws.com/flask-cicd-pipeline:latest
+  <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/flask-cicd-pipeline:latest
 
 docker push \
-  166665178530.dkr.ecr.us-east-2.amazonaws.com/flask-cicd-pipeline:latest
+  <ACCOUNT_ID>.dkr.ecr.us-east-2.amazonaws.com/flask-cicd-pipeline:latest
 ```
 
 ---
